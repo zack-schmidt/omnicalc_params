@@ -59,14 +59,6 @@ The way it should work is:
  - If I visit a URL of the pattern
 
    ```
-   /flexible/random/:min/:max
-   ```
-
-   I should see a random number that falls between the numbers in the third and fourth segments of the path.
-
- - If I visit a URL of the pattern
-
-   ```
    /flexible/payment/:basis_points/:number_of_years/:principal_value
    ```
 
@@ -75,6 +67,16 @@ The way it should work is:
    - the number in the third segment of the path is an **annual interest rate in basis points, or hundredths of a percent**
    - the number in the fourth segment of the path is a number of years
    - the number in the fifth segment of the path is a principal amount
+
+        ![Loan payment formula](payment_formula.gif?raw=true "Loan payment formula")
+
+ - If I visit a URL of the pattern
+
+   ```
+   /flexible/random/:min/:max
+   ```
+
+   I should see a random number that falls between the numbers in the third and fourth segments of the path.
 
 ### Examples
 
@@ -90,17 +92,17 @@ The way it should work is:
     >
     > The square root of 8.0 is 2.83.
 
- - If I visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), I should see something like
-
-    > ## Random Number
-    >
-    > A random number between 50 and 100 is 87.
-
  - If I visit [http://localhost:3000/flexible/payment/410/30/250000](http://localhost:3000/flexible/payment/34/60/30000), I should see something like
 
     > ## Payment
     >
     > A 30 year loan of $250000, with an annual interest rate of 4.1%, requires a monthly payment of $1208.00.
+
+ - If I visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), I should see something like
+
+    > ## Random Number
+    >
+    > A random number between 50 and 100 is 87.
 
 **All of these should work no matter what integers I type into the flexible segments of the path.**
 
@@ -124,16 +126,20 @@ The way it should work is:
     - If I submit that form, I should see the square of the number that I entered.
  - If I visit the URL [http://localhost:3000/square_root/new](http://localhost:3000/square_root/new), I should see a form with a label and an input to enter a number.
     - If I submit that form, I should see the square root of the number that I entered.
- - If I visit the URL [http://localhost:3000/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
-    - If I submit that form, I should see a random number that falls between the numbers that I entered.
  - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values, an **annual interest rate in basis points, or hundredths of a percent**, a number of years, and a principal amount.
     - If I submit that form, I should see the monthly loan payment due given the values that I entered.
+ - If I visit the URL [http://localhost:3000/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
+    - If I submit that form, I should see a random number that falls between the numbers that I entered.
+ - Add a link to the random number results page to **instantly** calculate a new random number _from within the same range_, without the user having to re-enter the minimum and maximum into the form again.
 
-#### Your task: Implement these features.
+## Part III: More Practice
+
+ - Add a link to each results page to go back and perform a new calculation.
+ - Add global navigation to get from calculator to calculator.
+ - Implement the following calculators (without styling):
+
+
 
 ## Extra challenges
 
- - Add a link to the random number results page to **instantly** calculate a new random number _from within the same range_, without the user having to re-enter the minimum and maximum into the form again.
- - Add a link to each results page to go back and perform a new calculation.
- - Add global navigation to get from calculator to calculator.
  - [Bootstrap it](http://getbootstrap.com/components/#panels) to make it look like [the real Omnicalc](http://omnicalc-target.herokuapp.com/). We've already connected `bootstrap.css` and [Font Awesome](http://fontawesome.io/icons/) for you, so you can just start using them.
