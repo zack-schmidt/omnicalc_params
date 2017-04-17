@@ -136,9 +136,9 @@ The way it should work is:
 
  - Add a link to each results page to go back and perform a new calculation.
  - Add global navigation to get from calculator to calculator.
- - Implement the following calculators (without styling):
-
-
+ - Implement the following calculators (without any styling, just functionality):
+    - [Word Count](http://omnicalc-target.herokuapp.com/word_count/new)
+    - [Descriptive Statistics](http://omnicalc-target.herokuapp.com/descriptive_statistics/new)
 
 ## Extra challenges
 
