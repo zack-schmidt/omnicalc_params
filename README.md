@@ -59,14 +59,14 @@ The way it should work is:
  - If I visit a URL of the pattern
 
    ```
-   /flexible/payment/:basis_points/:number_of_years/:principal_value
+   /flexible/payment/:basis_points/:number_of_years/:present_value
    ```
 
    I should see the monthly loan payment due, assuming that
 
    - the number in the third segment of the path is an **annual interest rate in basis points, or hundredths of a percent**
-   - the number in the fourth segment of the path is a number of years
-   - the number in the fifth segment of the path is a principal amount
+   - the number in the fourth segment of the path is the number of years remaining
+   - the number in the fifth segment of the path is the present value
 
         ![Loan payment formula](payment_formula.gif?raw=true "Loan payment formula")
 
@@ -126,7 +126,7 @@ The way it should work is:
     - If I submit that form, I should see the square of the number that I entered.
  - If I visit the URL [http://localhost:3000/square_root/new](http://localhost:3000/square_root/new), I should see a form with a label and an input to enter a number.
     - If I submit that form, I should see the square root of the number that I entered.
- - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values, an **annual interest rate in basis points, or hundredths of a percent**, a number of years, and a principal amount.
+ - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values, an **annual interest rate in basis points, or hundredths of a percent**, a number of years remaining, and a present value.
     - If I submit that form, I should see the monthly loan payment due given the values that I entered.
  - If I visit the URL [http://localhost:3000/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
     - If I submit that form, I should see a random number that falls between the numbers that I entered.
