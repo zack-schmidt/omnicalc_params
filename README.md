@@ -70,7 +70,7 @@ The way it should work is:
    /flexible/payment/:basis_points/:number_of_years/:principal_value
    ```
 
-   I should see a monthly loan payment, assuming that
+   I should see the monthly loan payment due, assuming that
 
    - the number in the third segment of the path is an **annual interest rate in basis points, or hundredths of a percent**
    - the number in the fourth segment of the path is a number of years
@@ -78,35 +78,35 @@ The way it should work is:
 
 ### Examples
 
-If you visit [http://localhost:3000/flexible/square/5](http://localhost:3000/flexible/square/5), you should see something like
+ - If I visit [http://localhost:3000/flexible/square/5](http://localhost:3000/flexible/square/5), I should see something like
 
-> ## Square
->
-> The square of 5 is 25.
+    > ## Square
+    >
+    > The square of 5 is 25.
 
-If you visit [http://localhost:3000/flexible/square_root/8](http://localhost:3000/flexible/square_root/8), you should see something like
+ - If I visit [http://localhost:3000/flexible/square_root/8](http://localhost:3000/flexible/square_root/8), I should see something like
 
-> ## Square Root
->
-> The square root of 8.0 is 2.83.
+    > ## Square Root
+    >
+    > The square root of 8.0 is 2.83.
 
-If you visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), you should see something like
+ - If I visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), I should see something like
 
-> ## Random Number
->
-> A random number between 50 and 100 is 87.
+    > ## Random Number
+    >
+    > A random number between 50 and 100 is 87.
 
-If you visit [http://localhost:3000/flexible/payment/410/30/250000](http://localhost:3000/flexible/payment/34/60/30000), you should see something like
+ - If I visit [http://localhost:3000/flexible/payment/410/30/250000](http://localhost:3000/flexible/payment/34/60/30000), I should see something like
 
-> ## Payment
->
-> A 30 year loan of $250000, with an annual interest rate of 4.1%, requires a monthly payment of $1208.00.
+    > ## Payment
+    >
+    > A 30 year loan of $250000, with an annual interest rate of 4.1%, requires a monthly payment of $1208.00.
 
-**All of these should work no matter what I type into the flexible segments of the path (as long as I type integers).**
+**All of these should work no matter what integers I type into the flexible segments of the path.**
 
 Remember:
 
- - Rails places all user input in the `params` hash.
+ - **Rails places all user input in the `params` hash.**
  - You can use the `params` hash in your actions or your views.
  - Watch the server log to see what the `params` hash contains for any given request.
 
@@ -120,45 +120,14 @@ Now, let's build something a little more realistic. We don't type inputs into th
 
 The way it should work is:
 
- - If you visit the URL [http://localhost:3000/forms/square/new](http://localhost:3000/square/new), you will see a form to enter a number.
- - If you visit the URL [http://localhost:3000/forms/square_root/new](http://localhost:3000/square_root/new), you will see a form to enter a number.
-   - If you submit that form, you will end up at `/forms/square_root/results` (with a query string on the end), and the square root of the number you entered will be displayed on the page.
- - If you visit the URL [http://localhost:3000/forms/random/new](http://localhost:3000/random/new), you will see a form to enter two numbers, a minimum and a maximum.
-   - If you submit that form, you will end up at `/forms/random/results` (with a query string on the end), and a random number from within the range that you entered will be displayed on the page.
- - If you visit the URL [http://localhost:3000/forms/payment/new](http://localhost:3000/payment/new), you will see a form to enter three numbers, an **annual interest rate in basis points, or hundredths of a percent**, a number of years, and a principal amount.
-   - If you submit that form, you will end up at `/forms/payment/results` (with a query string on the end), and the monthly payment for the values that you entered will be displayed on the page.
-
-
-   > ## Square
-   >
-   > The square of 5 is 25.
-
-   If you visit [http://localhost:3000/flexible/square_root/8](http://localhost:3000/flexible/square_root/8), you should see something like
-
-   > ## Square Root
-   >
-   > The square root of 8.0 is 2.83.
-
-   If you visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), you should see something like
-
-   > ## Random Number
-   >
-   > A random number between 50 and 100 is 87.
-
-   If you visit [http://localhost:3000/flexible/payment/410/30/250000](http://localhost:3000/flexible/payment/34/60/30000), you should see something like
-
-   > ## Payment
-   >
-   > A 30 year loan of $250000, with an annual interest rate of 4.1%, requires a monthly payment of $1208.00.
-
-   **All of these should work no matter what I type into the flexible segments of the path (as long as I type integers).**
-
-   Remember:
-
-    - Rails places all user input in the `params` hash.
-    - You can use the `params` hash in your actions or your views.
-    - Watch the server log to see what the `params` hash contains for any given request.
-
+ - If I visit the URL [http://localhost:3000/forms/square/new](http://localhost:3000/square/new), I should see a form with a label and an input to enter a number.
+ - If I submit that form, I should see the square of the number that I entered.
+ - If I visit the URL [http://localhost:3000/forms/square_root/new](http://localhost:3000/square_root/new), I should see a form with a label and an input to enter a number.
+ - If I submit that form, I should see the square root of the number that I entered.
+ - If I visit the URL [http://localhost:3000/forms/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
+ - If I submit that form, I should see a random number that falls between the numbers that I entered.
+ - If I visit the URL [http://localhost:3000/forms/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values, an **annual interest rate in basis points, or hundredths of a percent**, a number of years, and a principal amount.
+ - If I submit that form, I should see the monthly loan payment due given the values that I entered.
 
 #### Your task: Implement these features.
 
