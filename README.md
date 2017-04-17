@@ -96,7 +96,7 @@ The way it should work is:
 
     > ## Payment
     >
-    > A 30 year loan of $250000, with an annual interest rate of 4.1%, requires a monthly payment of $1208.00.
+    > A 30 year loan of $250,000, with an annual interest rate of 4.10%, requires a monthly payment of $1,208.00.
 
  - If I visit [http://localhost:3000/flexible/random/50/100](http://localhost:3000/flexible/random/50/100), I should see something like
 
