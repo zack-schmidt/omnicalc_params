@@ -122,11 +122,14 @@ Now, let's build something a little more realistic. We don't type inputs into th
 
 The way it should work is:
 
- - If I visit the URL [http://localhost:3000/square/new](http://localhost:3000/square/new), I should see a form with a label and an input to enter a number.
+ - If I visit the URL [http://localhost:3000/square/new](http://localhost:3000/square/new), I should see a form with a label and an input to enter a number. (Since we're no longer typing into the address bar, we can use decimals and are no longer limited to integers. Yay!)
     - If I submit that form, I should see the square of the number that I entered.
  - If I visit the URL [http://localhost:3000/square_root/new](http://localhost:3000/square_root/new), I should see a form with a label and an input to enter a number.
     - If I submit that form, I should see the square root of the number that I entered.
- - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values, an _annual_ interest rate _in basis points_, or hundredths of a percent, a number of _years_ remaining, and a present value.
+ - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values:
+    - An APR (annual percentage rate). (Since our users are no longer limited to integers, we can avoid thinking in basis points. Phew!)
+    - A number of _years_ remaining
+    - A principal
     - If I submit that form, I should see the **monthly** payment due given the values that I entered.
  - If I visit the URL [http://localhost:3000/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
     - If I submit that form, I should see a random number that falls between the numbers that I entered.
