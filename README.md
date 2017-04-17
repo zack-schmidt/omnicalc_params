@@ -16,7 +16,7 @@
     1. `rails s`
 
     That's it! You'd then see the same welcome screen at [http://localhost:3000](http://localhost:3000), and you would be ready to start building out your Rails app.
-  
+
 ## Standard Workflow
 
  1. Fork to your own account.
@@ -140,6 +140,6 @@ The way it should work is:
     - [Word Count](http://omnicalc-target.herokuapp.com/word_count/new)
     - [Descriptive Statistics](http://omnicalc-target.herokuapp.com/descriptive_statistics/new)
 
-## Extra challenges
+## Optional challenges
 
  - [Bootstrap it](http://getbootstrap.com/components/#panels) to make it look like [the real Omnicalc](http://omnicalc-target.herokuapp.com/). We've already connected `bootstrap.css` and [Font Awesome](http://fontawesome.io/icons/) for you, so you can just start using them.
