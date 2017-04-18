@@ -1,5 +1,7 @@
 # Omnicalc `params`
 
+Dynamic web applications are more interesting than static websites for one reason: **user input.** Let's finally learn how to let our users give us input!
+
 ## Project Specific Setup
 
  1. Fork and clone as usual.
