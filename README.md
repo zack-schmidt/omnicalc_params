@@ -2,6 +2,7 @@
 
 ## Project Specific Setup
 
+ 1. Fork and clone as usual.
  1. `cd` into the folder you downloaded.
  1. `bundle install` (or `bundle` for short)
  1. `rails server` (or `rails s` for short)
@@ -36,7 +37,7 @@
 
 Your goal will be to build a simplified version of Omnicalc.
 
-#### Here is your target for Part 1.
+### [Here is the target you will ultimately build.](https://omnicalc-params.herokuapp.com/)
 
 The way it should work is:
 
@@ -116,9 +117,7 @@ Remember:
 
 ## Part II: Forms
 
-Now, let's build something a little more realistic. We don't type inputs into the address bar; we type into forms!
-
-#### Here is your target for Part 2.
+Now, let's build something a little more realistic. **We don't type inputs into the address bar; we type into forms!**
 
 The way it should work is:
 
