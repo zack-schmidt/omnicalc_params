@@ -117,7 +117,7 @@ Remember:
 
 ## Part II: Forms
 
-Now, let's build something a little more realistic. **We don't type inputs into the address bar; we type into forms!**
+Now, let's build something a little more realistic. **We don't want to type input into the address bar; we want to type into forms!**
 
 The way it should work is:
 
