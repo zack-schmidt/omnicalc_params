@@ -2,6 +2,10 @@
 
 Dynamic web applications are more interesting than static websites for one reason: **user input.** Let's finally learn how to let our users give us input!
 
+Your goal will be to build a simplified version of Omnicalc.
+
+### [Here is the target you will ultimately build.](https://omnicalc-params.herokuapp.com/)
+
 ## Project Specific Setup
 
  1. Fork and clone as usual.
@@ -34,10 +38,6 @@ Dynamic web applications are more interesting than static websites for one reaso
  1. If you have a question about your code, a great way to get feedback is to open a [Pull Request](https://help.github.com/articles/creating-a-pull-request/). After creating it, if you include the URL of your Pull Request when you post your question, reviewers will be able to easily see the changes you've made and leave comments on each line of your code with suggestions.
 
 ## Part I: Flexible Routes
-
-Your goal will be to build a simplified version of Omnicalc.
-
-### [Here is the target you will ultimately build.](https://omnicalc-params.herokuapp.com/)
 
 The way it should work is:
 
