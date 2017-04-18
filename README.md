@@ -128,7 +128,7 @@ The way it should work is:
  - If I visit the URL [http://localhost:3000/payment/new](http://localhost:3000/payment/new), I should see a form with labels and inputs to enter three values:
     - An APR (annual percentage rate). (Since our users are no longer limited to integers, we can avoid thinking in basis points. Phew!)
     - A number of _years_ remaining
-    - A principal
+    - The principal
     - If I submit that form, I should see the **monthly** payment due given the values that I entered.
  - If I visit the URL [http://localhost:3000/random/new](http://localhost:3000/random/new), I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
     - If I submit that form, I should see a random number that falls between the numbers that I entered.
