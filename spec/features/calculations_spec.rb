@@ -51,6 +51,12 @@ feature "Flexible payment" do
 end
 
 feature "Square form" do
+  it "has a form element", points: 2 do
+    visit "/square/new"
+
+    expect(page).to have_css("form")
+  end
+
   it "has a label", points: 2 do
     visit "/square/new"
 
@@ -69,9 +75,15 @@ feature "Square form" do
     expect(page).to have_css("button", text: "Calculate square")
   end
 
-  it "has a form with the correct action", points: 2, hint: I18n.t("hints.button_type") do
+  it "when submitted leads to the correct URL", points: 4, hint: I18n.t("hints.button_type") do
     visit "/square/new"
 
     expect(page).to have_css("form[action=\"/square/results\"]")
+  end
+
+  it "captures the user's input in the query string with a name", points: 4 do
+    visit "/square/new"
+
+    expect(page).to have_css("input[name]")
   end
 end
