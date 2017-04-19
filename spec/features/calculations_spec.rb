@@ -165,3 +165,65 @@ feature "Square root form" do
     expect(page).to have_content("2.45")
   end
 end
+
+feature "Payment form" do
+  it "has a form element", points: 2 do
+    visit "/payment/new"
+
+    expect(page).to have_css("form")
+  end
+
+  it "has a label for APR", points: 1 do
+    visit "/payment/new"
+
+    expect(page).to have_css("label", text: "APR")
+  end
+
+  it "has a label for number of years", points: 1 do
+    visit "/payment/new"
+
+    expect(page).to have_css("label", text: "Number of years")
+  end
+
+  it "has a label for principal", points: 1 do
+    visit "/payment/new"
+
+    expect(page).to have_css("label", text: "Principal")
+  end
+
+  it "has three inputs", points: 1 do
+    visit "/payment/new"
+
+    expect(page).to have_css("input", count: 3)
+  end
+
+  it "has a button", points: 1, hint: I18n.t("hints.button_type") do
+    visit "/payment/new"
+
+    expect(page).to have_css("button", text: "Calculate monthly payment")
+  end
+
+  it "when submitted leads to some other URL", points: 4 do
+    visit "/payment/new"
+
+    expect(page).to have_css("form[action]")
+  end
+
+  it "captures the user's input in the query string with names", points: 4 do
+    visit "/payment/new"
+
+    expect(page).to have_css("input[name]", count: 3)
+  end
+
+  it "works", points: 12, hints: "hints.label_for_input" do
+    visit "/payment/new"
+
+    fill_in "APR", with: 4.1
+    fill_in "Number of years", with: 30
+    fill_in "Principal", with: 250000
+
+    click_button "Calculate monthly payment"
+
+    expect(page).to have_content("$1,208.00")
+  end
+end
