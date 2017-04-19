@@ -87,7 +87,7 @@ feature "Square form" do
     expect(page).to have_css("input[name]")
   end
 
-  it "works", points: 8, hints: "hints.label_for_input" do
+  it "works with 5", points: 6, hints: "hints.label_for_input" do
     visit "/square/new"
 
     fill_in "Enter a number", with: 5
@@ -95,5 +95,15 @@ feature "Square form" do
     click_button "Calculate square"
 
     expect(page).to have_content("25.0")
+  end
+
+  it "works with 6", points: 6, hints: "hints.label_for_input" do
+    visit "/square/new"
+
+    fill_in "Enter a number", with: 6
+
+    click_button "Calculate square"
+
+    expect(page).to have_content("36.0")
   end
 end
