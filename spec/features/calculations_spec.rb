@@ -107,3 +107,61 @@ feature "Square form" do
     expect(page).to have_content("36.0")
   end
 end
+
+feature "Square root form" do
+  it "has a form element", points: 2 do
+    visit "/square_root/new"
+
+    expect(page).to have_css("form")
+  end
+
+  it "has a label", points: 2 do
+    visit "/square_root/new"
+
+    expect(page).to have_css("label", text: "Enter a number")
+  end
+
+  it "has an input", points: 2 do
+    visit "/square_root/new"
+
+    expect(page).to have_css("input")
+  end
+
+  it "has a button", points: 2, hint: I18n.t("hints.button_type") do
+    visit "/square_root/new"
+
+    expect(page).to have_css("button", text: "Calculate square root")
+  end
+
+  it "when submitted leads to some other URL", points: 4 do
+    visit "/square_root/new"
+
+    expect(page).to have_css("form[action]")
+  end
+
+  it "captures the user's input in the query string with a name", points: 4 do
+    visit "/square_root/new"
+
+    expect(page).to have_css("input[name]")
+  end
+
+  it "works with 5", points: 6, hints: "hints.label_for_input" do
+    visit "/square_root/new"
+
+    fill_in "Enter a number", with: 5
+
+    click_button "Calculate square root"
+
+    expect(page).to have_content("2.24")
+  end
+
+  it "works with 6", points: 6, hints: "hints.label_for_input" do
+    visit "/square_root/new"
+
+    fill_in "Enter a number", with: 6
+
+    click_button "Calculate square root"
+
+    expect(page).to have_content("2.45")
+  end
+end
