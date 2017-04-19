@@ -23,3 +23,4 @@ en:
   hints:
     number_to_currency: Rails has a handy view helper method called [`number_to_currency()`](https://apidock.com/rails/ActionView/Helpers/NumberHelper/number_to_currency) that makes this much easier!
     button_type: If you are having issues and you have an attribute `type="button"` on your `<button>` element, try removing it.
+    label_for_input: Make sure that you have a `for=""` attribute on the `<label>` and that it matches the `id=""` attribute on the `<input>`; otherwise our test won't know which input goes with which label (and neither would screen readers, etc).

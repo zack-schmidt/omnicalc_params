@@ -75,15 +75,25 @@ feature "Square form" do
     expect(page).to have_css("button", text: "Calculate square")
   end
 
-  it "when submitted leads to the correct URL", points: 4, hint: I18n.t("hints.button_type") do
+  it "when submitted leads to some other URL", points: 4 do
     visit "/square/new"
 
-    expect(page).to have_css("form[action=\"/square/results\"]")
+    expect(page).to have_css("form[action]")
   end
 
   it "captures the user's input in the query string with a name", points: 4 do
     visit "/square/new"
 
     expect(page).to have_css("input[name]")
+  end
+
+  it "works", points: 8, hints: "hints.label_for_input" do
+    visit "/square/new"
+
+    fill_in "Enter a number", with: 5
+
+    click_button "Calculate square"
+
+    expect(page).to have_content("25.0")
   end
 end
