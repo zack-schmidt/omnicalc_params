@@ -152,17 +152,17 @@ feature "Square root form" do
 
     click_button "Calculate square root"
 
-    expect(page).to have_content("2.24")
+    expect(page).to have_content("2.236")
   end
 
-  it "works with 6", points: 6, hints: "hints.label_for_input" do
+  it "works with 6", points: 8, hints: "hints.label_for_input" do
     visit "/square_root/new"
 
-    fill_in "Enter a number", with: 6
+    fill_in "Enter a number", with: 8
 
     click_button "Calculate square root"
 
-    expect(page).to have_content("2.45")
+    expect(page).to have_content("2.828")
   end
 end
 
