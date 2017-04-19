@@ -20,5 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  greeting: Say hi
-  hello: "Hello world"
+  hints:
+    number_to_currency: Rails has a handy view helper method called [`number_to_currency()`](https://apidock.com/rails/ActionView/Helpers/NumberHelper/number_to_currency) that makes this much easier!
+    button_type: If you are having issues and you have an attribute `type="button"` on your `<button>` element, try removing it.
