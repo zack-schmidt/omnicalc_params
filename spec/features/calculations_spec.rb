@@ -69,7 +69,7 @@ feature "Square form" do
     expect(page).to have_css("input")
   end
 
-  it "has a button", points: 2, hint: I18n.t("hints.button_type") do
+  it "has a button with the correct copy", points: 1, hint: I18n.t("hints.button_text") do
     visit "/square/new"
 
     expect(page).to have_css("button", text: "Calculate square")
@@ -127,13 +127,13 @@ feature "Square root form" do
     expect(page).to have_css("input")
   end
 
-  it "has a button", points: 2, hint: I18n.t("hints.button_type") do
+  it "has a button with the correct copy", points: 2, hint: I18n.t("hints.button_text") do
     visit "/square_root/new"
 
     expect(page).to have_css("button", text: "Calculate square root")
   end
 
-  it "when submitted leads to some other URL", points: 4 do
+  it "when submitted leads to some other URL", points: 4, hint: I18n.t("hints.button_type") do
     visit "/square_root/new"
 
     expect(page).to have_css("form[action]")
@@ -197,7 +197,7 @@ feature "Payment form" do
     expect(page).to have_css("input", count: 3)
   end
 
-  it "has a button", points: 1, hint: I18n.t("hints.button_type") do
+  it "has a button with the correct copy", points: 1, hint: I18n.t("hints.button_text") do
     visit "/payment/new"
 
     expect(page).to have_css("button", text: "Calculate monthly payment")
