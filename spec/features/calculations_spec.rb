@@ -51,7 +51,7 @@ feature "Flexible payment" do
 end
 
 feature "Square form" do
-  it "has a form element", points: 2 do
+  it "has a form element", points: 1 do
     visit "/square/new"
 
     expect(page).to have_css("form")
@@ -109,7 +109,7 @@ feature "Square form" do
 end
 
 feature "Square root form" do
-  it "has a form element", points: 2 do
+  it "has a form element", points: 1 do
     visit "/square_root/new"
 
     expect(page).to have_css("form")
@@ -167,7 +167,7 @@ feature "Square root form" do
 end
 
 feature "Payment form" do
-  it "has a form element", points: 2 do
+  it "has a form element", points: 1 do
     visit "/payment/new"
 
     expect(page).to have_css("form")
@@ -225,5 +225,73 @@ feature "Payment form" do
     click_button "Calculate monthly payment"
 
     expect(page).to have_content("$1,208.00")
+  end
+end
+
+feature "Random form" do
+  it "has a form element", points: 1 do
+    visit "/random/new"
+
+    expect(page).to have_css("form")
+  end
+
+  it "has a label for minimum", points: 1 do
+    visit "/random/new"
+
+    expect(page).to have_css("label", text: "Minimum")
+  end
+
+  it "has a label for maximum", points: 1 do
+    visit "/random/new"
+
+    expect(page).to have_css("label", text: "Maximum")
+  end
+
+  it "has two inputs", points: 1 do
+    visit "/random/new"
+
+    expect(page).to have_css("input", count: 2)
+  end
+
+  it "has a button with the correct copy", points: 1, hint: I18n.t("hints.button_text") do
+    visit "/random/new"
+
+    expect(page).to have_css("button", text: "Pick random number")
+  end
+
+  it "when submitted leads to some other URL", points: 4 do
+    visit "/random/new"
+
+    expect(page).to have_css("form[action]")
+  end
+
+  it "captures the user's input in the query string with names", points: 4 do
+    visit "/random/new"
+
+    expect(page).to have_css("input[name]", count: 2)
+  end
+
+  it "has a \"Recalculate\" link", points: 1 do
+    visit "/random/new"
+
+    click_button "Pick random number"
+
+    expect(page).to have_css("a", text: "Recalculate")
+  end
+
+  it "has a \"Recalculate\" link that works", points: 4 do
+    visit "/random/new"
+
+    fill_in "Minimum", with: -2.5
+
+    fill_in "Maximum", with: 3.5
+
+    click_button "Pick random number"
+
+    original_results_url = page.current_url
+
+    click_link "Recalculate"
+
+    expect(page).to have_current_path(original_results_url, url: true)
   end
 end
