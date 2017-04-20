@@ -87,7 +87,7 @@ feature "Square form" do
     expect(page).to have_css("input[name]")
   end
 
-  it "works with 5", points: 6, hint: "hints.label_for_input" do
+  it "works with 5", points: 6, hint: I18n.t("hints.label_for_input") do
     visit "/square/new"
 
     fill_in "Enter a number", with: 5
@@ -97,7 +97,7 @@ feature "Square form" do
     expect(page).to have_content("25.0")
   end
 
-  it "works with 6", points: 6, hint: "hints.label_for_input" do
+  it "works with 6", points: 6, hint: I18n.t("hints.label_for_input") do
     visit "/square/new"
 
     fill_in "Enter a number", with: 6
@@ -145,7 +145,7 @@ feature "Square root form" do
     expect(page).to have_css("input[name]")
   end
 
-  it "works with 5", points: 6, hint: "hints.label_for_input" do
+  it "works with 5", points: 6, hint: I18n.t("hints.label_for_input") do
     visit "/square_root/new"
 
     fill_in "Enter a number", with: 5
@@ -155,7 +155,7 @@ feature "Square root form" do
     expect(page).to have_content("2.236")
   end
 
-  it "works with 6", points: 8, hint: "hints.label_for_input" do
+  it "works with 6", points: 8, hint: I18n.t("hints.label_for_input") do
     visit "/square_root/new"
 
     fill_in "Enter a number", with: 8
@@ -215,7 +215,7 @@ feature "Payment form" do
     expect(page).to have_css("input[name]", count: 3)
   end
 
-  it "works", points: 12, hint: "hints.label_for_input" do
+  it "works", points: 12, hint: I18n.t("hints.label_for_input") do
     visit "/payment/new"
 
     fill_in "APR", with: 4.1
