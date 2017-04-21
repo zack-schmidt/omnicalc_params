@@ -279,7 +279,7 @@ feature "Random form" do
     expect(page).to have_css("a", text: "Recalculate")
   end
 
-  it "has a \"Recalculate\" link that works", points: 4 do
+  it "has a \"Recalculate\" link that works", points: 0 do
     visit "/random/new"
 
     fill_in "Minimum", with: -2.5
