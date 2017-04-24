@@ -6,7 +6,7 @@
   APR
 </p>
 <p>
-  <%= @the_basis_points %>
+  <%= number_to_percentage(@the_basis_points, precision: 4) %>
 </p>
 <p>
   Number of years
@@ -18,13 +18,13 @@
   Principal
 </p>
 <p>
-  <%= @the_present_value %>
+  <%= number_to_currency(@the_present_value) %>
 </p>
 <p>
   Payment
 </p>
 <p>
-  <%= @the_monthly_payment %>.
+  <%= number_to_currency(@the_monthly_payment) %>.
 </p>
 
 <a href="payment/new">Calculate another payment</a>

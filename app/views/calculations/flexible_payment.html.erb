@@ -3,5 +3,5 @@
 </h1>
 
 <p>
-  A <%= @the_number_of_years %> year loan of <%= @the_present_value %>, with an annual interest rate of <%= @the_basis_points/100 %>%, requires a monthly payment of <%= @the_monthly_payment %>.
+  A <%= @the_number_of_years %> year loan of <%= number_to_currency(@the_present_value) %>, with an annual interest rate of <%= number_to_percentage(@the_basis_points/100, precision: 2) %>, requires a monthly payment of <%= number_to_currency(@the_monthly_payment) %>.
 </p>
